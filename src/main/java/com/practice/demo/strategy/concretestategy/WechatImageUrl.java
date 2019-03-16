@@ -15,6 +15,6 @@ import com.practice.demo.strategy.strategy.ShareImageUrl;
 public class WechatImageUrl implements ShareImageUrl {
     @Override
     public String showImageUrl(String platform) {
-        return "从配置获取的Image";
+        return "从配置获取的Image: " + platform;
     }
 }

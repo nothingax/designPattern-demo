@@ -19,6 +19,7 @@ public class mainStrategyExample {
         String title = context.showTitle();
         System.out.println("获取策略1的title是："+title);
 
-
+        String image = context.showImageUrl("ios 平台");
+        System.out.println(image);
     }
 }

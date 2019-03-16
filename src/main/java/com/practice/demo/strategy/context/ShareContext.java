@@ -43,4 +43,17 @@ public class ShareContext {
         return shareTitle.showTitle();
     }
 
+    public  String showContent() {
+        return shareContent.showContent();
+    }
+
+    public String showImageUrl(final String platform){
+        return shareImageUrl.showImageUrl(platform);
+    }
+
+    public String showLink(final String platform, final String userToken){
+        return shareLink.getShareLink(platform, userToken);
+    }
+
+
 }
