@@ -10,7 +10,7 @@ package com.example.demo.strategy;
  * @version 1.0
  * @date 2019/3/16 1:01 AM
  */
-public class CashNormal extends CashSuper {
+public class CashNormalStrategy extends BaseCashSuperStrategy {
 
     /**
      * 正常收费,原价返回

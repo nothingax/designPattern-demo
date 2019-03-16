@@ -10,7 +10,7 @@ package com.example.demo.strategy;
  * @version 1.0
  * @date 2019/3/16 1:00 AM
  */
-public abstract class CashSuper {
+public abstract class BaseCashSuperStrategy {
 
     public abstract Integer acceptCash(Integer money);
 }

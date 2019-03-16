@@ -1,5 +1,8 @@
 package com.example.demo.strategy;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * Program Name: designpattern-demo
  * <p>
@@ -12,7 +15,7 @@ package com.example.demo.strategy;
  */
 public class CashContext {
 
-    private CashSuper concreteCashSuper;
+    private BaseCashSuperStrategy concreteBaseCashSuperStrategy;
 
     /**
      * 参数是一个字符串，表示收费类型，此处与简单工厂模式结合
@@ -22,15 +25,17 @@ public class CashContext {
 
         // 分支判断放在context里，而不是放在客户端里，不需要由客户端来生成具体策略
         // 减轻了客户端的判断的压力
+
+        // TODO 这里可以用上反射
         switch (type){
             case "normal":
-                concreteCashSuper = new CashNormal();
+                concreteBaseCashSuperStrategy = new CashNormalStrategy();
                 break;
             case "打9折":
-                concreteCashSuper = new CashRebate(9);
+                concreteBaseCashSuperStrategy = new CashRebateStrategy(9);
                 break;
             case "满300减100":
-                concreteCashSuper = new CashReturn(300,100);
+                concreteBaseCashSuperStrategy = new CashReturnStrategy(300,100);
                 break;
             default:
                 throw new Exception("未知的策略类型");
@@ -42,6 +47,16 @@ public class CashContext {
      * 通过具体的策略来计算支付金额
      */
     public Integer getResult(Integer money) {
-        return concreteCashSuper.acceptCash(money);
+        return concreteBaseCashSuperStrategy.acceptCash(money);
+    }
+
+    /**
+     * 返回 每一件商品上使用的优惠券额度
+     *
+     * @return
+     */
+    public List<Map<String, Integer>> getProductFeeResult() {
+
+        return null;
     }
 }

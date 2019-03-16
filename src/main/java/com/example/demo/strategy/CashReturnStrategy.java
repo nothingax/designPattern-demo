@@ -10,7 +10,7 @@ package com.example.demo.strategy;
  * @version 1.0
  * @date 2019/3/16 1:08 AM
  */
-public class CashReturn extends CashSuper {
+public class CashReturnStrategy extends BaseCashSuperStrategy {
 
     // 满减条件
     private Integer moneyCondition;
@@ -18,7 +18,7 @@ public class CashReturn extends CashSuper {
     // 满减额度
     private Integer moneyReturn;
 
-    public CashReturn(Integer moneyCondition, Integer moneyReturn) {
+    public CashReturnStrategy(Integer moneyCondition, Integer moneyReturn) {
         this.moneyCondition = moneyCondition;
         this.moneyReturn = moneyReturn;
     }
