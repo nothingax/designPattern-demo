@@ -14,7 +14,7 @@ import com.practice.demo.strategy.context.ShareContext;
  * @date 2019/3/16 2:37 PM
  */
 public class mainStrategyExample {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         ShareContext context = ShareContext.getConcrete(1);
         String title = context.showTitle();
         System.out.println("获取策略1的title是："+title);
